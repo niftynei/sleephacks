@@ -6,8 +6,9 @@ from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'sleephackers.views.home', name='home'),
-    # url(r'^sleephackers/', include('sleephackers.foo.urls')),
+    url(r'^signup', 'sleep.views.signup', name='signup'),
+    url(r'^authorize', 'sleep.views.authorize', name='authorize'),
+    url(r'^', 'sleep.views.index', name='index'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
