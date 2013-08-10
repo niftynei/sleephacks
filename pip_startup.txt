@@ -1,0 +1,17 @@
+Cython==0.19.1
+Django==1.5.1
+WebOb==1.2.3
+distribute==0.6.49
+llvmpy==unknown
+logging==0.4.9.6
+## FIXME: could not find svn URL in dependency_links for this package:
+mercurial==2.0.1-20111201
+numba==0.9.0
+numpy==1.7.1
+pycrypto==2.6
+vboxapi==1.0
+virtualenv==1.7.1.2
+virtualenv-clone==0.2.4
+virtualenvwrapper==3.5
+webapp2==2.5.2
+wsgiref==0.1.2
