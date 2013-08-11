@@ -9,3 +9,8 @@ Run the following before running the django server.
 
 - `export UP_API_CLIENT=  (Key from email)`
 - `export UP_API_SECRET=  (Key from email)`
+
+Requires setting up a database on mysql called sleephackers, and adding a user, sleephacker.  Password: sleepers.  These configurations are set in settings.py.
+
+- `CREATE DATABASE sleephackers;`
+
