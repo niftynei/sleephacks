@@ -24,27 +24,12 @@
 
 <div class="container-narrow">
 
-	<h1 class="howsleep">How You Can Sleep Better</h1>
-	
+	<h1 class="howsleep">Keep On Sleeping</h1>
 	<hr />
 	
-	<div ng-controller="ResultsCtrl">
+	<p>We don't yet have enough data to make useful inferences about which activities help you sleep soundly and which keep you up at night. Keep recording your sleep with the Jawbone Up, and check back here in a few days to view your personalized results.</p>
 	
-	<div ng-repeat="result in analysis.results" class="card" ng-class="result.flipClass" ng-click="flip($index)">
-		<div class="front">
-			<span style="font-weight: 800; font-size: 24px;">{{result.doOrDoNot}}</span> {{result.title}}</div>
-		<div class="back">
-			<div class="resulticon"><img src="../img/{{result.icon}}" /></div>
-			<div class="resulttext">
-			<p>{{result.correlationStrength}} <span style="color: #459ff9">{{result.correlationType}}</span> correlation</p>
-			<p class="littletext">{{result.explanation}}</p>
-			<p class="littletext"><span style="color: #459ff9; font-weight:bold;">TRY:</span> {{result.exampleTry}}</p>
-			</div>
-		</div>
-	</div>
-
-	</div>
-	
+	<!--p>In the meantime, here are some changes that have helped other people sleep better:</p-->
 	
 	
 		<!--a class="btn btn-info">Calendar</button>
