@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sleephacker">
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Sleep Hacker • Results</title>
+
+	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="../css/sleephacker.css" rel="stylesheet">
+
+	<!--style>[ng-cloak] { display: none; }</style-->
+	
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+	<script src="../js/ui-bootstrap-tpls-0.4.0.js"></script>
+	<script src="../js/sleephacker.js"></script>
+
+</head>
+<body>
+
+<div class="container-narrow">
+
+	<h1>How You Can Sleep Better</h1>
+	
+	<hr />
+	
+	<div ng-controller="ResultsCtrl">
+	
+	<div ng-repeat="result in analysis.results" class="card" ng-class="result.flipClass" ng-click="flip($index)">
+		<div class="front">
+			<span style="font-weight: 800; font-size: 24px;">DO</span> {{result.title}}</div>
+		<div class="back">
+			65% correlation [Graph?]
+			<br>(Exercise can help because BLAH)
+			<br>[Calendar] - highlight significant days for this trend
+		</div>
+	</div>
+
+	</div>
+	
+	
+	
+		<a class="btn btn-info">Calendar</button>
+		<a style="float:right;" class="btn btn-primary" href="./settings.html">Settings</a>
+	</div>
+	
+
+
+
+</div>
+</body>
+
+</html>

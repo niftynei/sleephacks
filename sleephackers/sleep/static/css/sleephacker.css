@@ -1,0 +1,176 @@
+body {
+	background: url('../img/blurry_mountains.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color:#fff;
+  	background-color:#333;
+  	font-family: 'Open Sans', sans-serif;
+  	font-weight: 300;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.headerspace {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.headerspace h1 {
+  font-size: 64px;
+  font-weight: 300;
+  margin: 50px 0 50px 0;
+ font-family: 'Open Sans', sans-serif;
+
+}
+
+.headerspace .btn {
+  margin: 40px;
+  font-size: 21px;
+  padding: 14px 24px;
+  font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+  border: 2px solid #fff;
+
+}
+
+.btn-start {
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-start:hover,
+.btn-start:focus,
+.btn-start:active,
+.btn-start.active {
+  background-color: rgba(255,255,255,0.2);
+}
+.btn-start.disabled:hover,
+.btn-start.disabled:focus,
+.btn-start.disabled:active,
+.btn-start.disabled.active,
+.btn-start[disabled]:hover,
+.btn-start[disabled]:focus,
+.btn-start[disabled]:active,
+.btn-start[disabled].active,
+fieldset[disabled] .btn-start:hover,
+fieldset[disabled] .btn-start:focus,
+fieldset[disabled] .btn-start:active,
+fieldset[disabled] .btn-start.active {
+  background-color: rgba(255,255,255,0.1);
+;
+}
+
+
+
+h1 {
+
+  font-size: 48px;
+  font-weight: 300;
+  margin: 50px 0 50px 0;
+ font-family: 'Open Sans', sans-serif;
+ }
+
+
+/* line 14, ../sass/fancy.scss */
+.card {
+  height: 50px;
+  margin: 40px 0;
+  -webkit-perspective: 800;
+  -moz-perspective: 800;
+  -ms-perspective: 800;
+  -o-perspective: 800;
+  perspective: 800;
+  font-size: 20px;
+  -webkit-transition: 0.6s ease-in-out;
+  -moz-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+
+}
+
+.card.flipped {
+  height: 100px;
+  -webkit-transition: 0.6s ease-in-out;
+  -moz-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+
+}
+
+/* line 22, ../sass/fancy.scss */
+.card .front, .card .back {
+  display: block;
+  border: 1px solid #fff;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.6s ease-in-out;
+  -moz-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/* line 41, ../sass/fancy.scss */
+.card .front {
+  background: #e5dfe9;
+  color: #676767;
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  z-index: 9;
+  
+}
+
+/* line 49, ../sass/fancy.scss */
+.card .back {
+  background: #676767;
+  color: #e5dfe9;
+  -webkit-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  -o-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+  z-index: 8;
+  
+}
+
+/* line 64, ../sass/fancy.scss */
+.card.flipped .front {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  z-index: 9;
+
+}
+/* line 69, ../sass/fancy.scss */
+.card.flipped .back {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  z-index: 10;
+}

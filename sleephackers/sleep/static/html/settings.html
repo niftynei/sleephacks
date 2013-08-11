@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sleephacker">
+
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,600,700' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<title>Sleep Hacker • Settings</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/sleephacker.css" rel="stylesheet">
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+	<script src="../js/ui-bootstrap-tpls-0.4.0.js"></script>
+	<script src="../js/sleephacker.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-narrow">
+
+	<h1>Settings</h1>
+	
+	<h3>Track Tags</h3>
+	<p>Sleep Hacker can attempt to correlate the timing of tagged food items to sleep quality. Track any of the tag groups listed below or create your own.</p>
+	
+	<div ng-controller="TagGroupsCtrl">
+	
+	<div ng-repeat="taggroup in taggroups">
+	<h4>Group: {{taggroup.name}} [delete group]</h4>
+	<ul>
+		<li ng-repeat="tag in taggroup.tags">{{tag.name}} [delete tag]</li>
+	</ul>
+	[add tag]
+	</div>
+	
+	[new tag group]
+	
+	
+	Group: Alcohol
+	
+	Group: Spicy
+	
+	Group: Nicotine
+	
+	</div>
+	
+	
+	<h3>Restore Hidden Recommendations</h3>
+	<button class="btn">Show All</button>
+	
+	<hr/>
+	
+	<a class="btn btn-primary" href="./results.html">Done</a>
+
+	
+</div>
+
+
+</div>
+</body>
+</html>
