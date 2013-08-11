@@ -12,19 +12,41 @@ var sleephacker = angular.module('sleephacker', ['ui.bootstrap'])
 	$scope.analysis = {day: "today"};
 	$scope.analysis.results = [
     {
-      title: "drink coffee after 5PM",
-      content: "Dynamic Group Body - 1",
+      title: "drink coffee before bed",
+      doOrDoNot: "DON'T",
       isFlipped: false,
-      flipClass: ""
+      flipClass: "",
+      correlationStrength: "strong",
+      correlationType: "negative",
+      explanation: "people who drink coffee after 5pm wake up an average of 2 more times each night.",
+      exampleTry: "taking your last cup of coffee before 5pm, although the earlier the better.",
+      icon: "coffee.png"
     },
     {
-      title: "exercise before bed",
-      content: "Dynamic Group Body - 2",
+      title: "exercise in the morning",
+      doOrDoNot: "DO",
       isFlipped: false,
-      flipClass: ""
+      flipClass: "",
+      correlationStrength: "moderate",
+      correlationType: "positive",
+      explanation: "When you exercise vigorously, you tend to have longer deep sleep cycles throughout the night.",
+      exampleTry: "spend at least 30 minutes each morning doing vigorous exercise, such as running or swimming.",
+      icon: "swim.png"
+    },
+    {
+     title: "nap during the day",
+      doOrDoNot: "DON'T",
+      isFlipped: false,
+      flipClass: "",
+      correlationStrength: "moderate",
+      correlationType: "positive",
+      explanation: "people who nap during the day tend to get less light and heavy sleep.",
+      exampleTry: "going to bed earlier or waking up later to get a better energy boost for the coming day.",
+      icon: "sleep.png"
     }
   	];
-
+  	
+  	
 	$scope.enoughData = "true";
 		
 	$scope.flip = function (index) {
@@ -44,6 +66,23 @@ var sleephacker = angular.module('sleephacker', ['ui.bootstrap'])
 			$scope.analysis.results[index].flipClass = "";
 		}
 	};
+	
+	parseResults = function () {
+		switch(title)
+		{
+		case "caffeine":
+			break;
+			
+		case "alcohol":
+		
+			break;
+			
+		default:
+		
+		}
+		
+	}
+	
 
 })
 
