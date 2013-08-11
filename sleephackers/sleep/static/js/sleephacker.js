@@ -31,7 +31,7 @@ var sleephacker = angular.module('sleephacker', ['ui.bootstrap'])
 		
 		console.log("FLIP");
 		
-		for (var i = 0; i < $scope.analysis.results[].length; i++) {
+		for (var i = 0; i < $scope.analysis.results.length; i++) {
 			if (i != index){
 				$scope.analysis.results[i].flipClass = "";
 			}
