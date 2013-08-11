@@ -74,7 +74,21 @@ class UPProvider(object):
         logging.debug(response)
         return response
         
+    def get_workouts(self, access_token):
+       return self.read(
+           access_token,
+           'users/@me/workouts')
 
+    def get_sleeps(self, access_token):
+        return self.read(
+            access_token,
+            'users/@me/sleeps')
+
+    def get_meals(self, access_token):
+        return self.read(
+            access_token,
+            'users/@me/meals')
+            
     class Workout(object):
         def __init__(self, start, end, type, photo_url):
             self._info = {
@@ -89,12 +103,14 @@ class UPProvider(object):
             obj.update(self._info)
             return obj
             
-    def write_workout(self, access_token, workout):
-        return self.write(
-            access_token,
-            'users/@me/workouts',
-            workout.to_post_data()
-            )
+        def write_workout(self, access_token, workout):
+            return self.write(
+                access_token,
+                'users/@me/workouts',
+                workout.to_post_data()
+                )
+
+
 
     class Meal(object):
         def __init__(self, photo_url, title):
@@ -125,6 +141,7 @@ class UPProvider(object):
                     'items' : json.dumps([ item.to_dict() for item in self._items ])
                     })
             return obj
+        
 
     class MealItem(object):
 
@@ -160,6 +177,3 @@ class UPProvider(object):
             'users/@me/meals',
             meal.to_post_data()
             )
-    
-
-

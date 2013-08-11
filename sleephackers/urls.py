@@ -6,7 +6,7 @@ from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^signup', 'sleep.views.signup', name='signup'),
+    url(r'^login', 'sleep.views.login', name='login'),
     url(r'^authorize', 'sleep.views.authorize', name='authorize'),
     url(r'^', 'sleep.views.index', name='index'),
 

@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.utils.html import escape
+from django.contrib.auth.models import User
 
 import upconnect
 import os
@@ -23,7 +24,7 @@ app_config = {
     'UP_API_SECRET': os.environ['UP_API_SECRET']
 }
 
-redirect_url = 'http://127.0.0.1:8000/authorize'
+redirect_url = 'authorize'
 
 def _up_provider():
     return upconnect.UPProvider(app_config['UP_API_CLIENT_ID'], app_config['UP_API_SECRET'])
@@ -36,17 +37,24 @@ def index(request):
     token = _token(request)
     
     if not token:
-        return redirect('/signup') 
+        return redirect('/login') 
 
     up = _up_provider()
     user = up.read(token, 'users/@me')
+
+    # find in the database, look up by uid
+    xid = user['data']['xid']
+    user_obj = User.objects.get_or_create(username=xid)
+
     response = HttpResponse('<html><b>Hello %s!</b></html>' % user['data']['first'], mimetype='text/html')
 
+    # fire off the scrapers
     return response
 
-def signup(request):
+def login(request):
+    redirection_url = request.build_absolute_uri(redirect_url)
     up = _up_provider()
-    url = up.get_connect_url(redirect_url, 'basic_read move_read move_write')
+    url = up.get_connect_url(redirection_url, 'basic_read move_read move_write')
 
     response = redirect(url)
     return response
