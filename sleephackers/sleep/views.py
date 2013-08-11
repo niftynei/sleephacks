@@ -43,12 +43,15 @@ def index(request):
     user = up.read(token, 'users/@me')
 
     # find in the database, look up by uid
-    xid = user['data']['xid']
-    user_obj = User.objects.get_or_create(username=xid)
+    user_xid = user['data']['xid']
+    user_obj = User.objects.get_or_create(username=user_xid)
 
     response = HttpResponse('<html><b>Hello %s!</b></html>' % user['data']['first'], mimetype='text/html')
 
     # fire off the scrapers
+    scaper = UP_Scraper(up, token, user_xid)
+    scaper.sleeps()
+
     return response
 
 def login(request):
